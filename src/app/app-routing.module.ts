@@ -6,22 +6,33 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'property-images', loadChildren: './property-images/property-images.module#PropertyImagesPageModule' },
-  { path: 'services/detail/:serviceid/gallery', loadChildren: './gallery/gallery.module#GalleryPageModule' },
-  { path: 'services', loadChildren: './services/services.module#ServicesPageModule' },
-  { path: 'ratings', loadChildren: './ratings/ratings.module#RatingsPageModule' },
-  { path: 'services/detail/:serviceid', loadChildren: './services/detail/detail.module#DetailPageModule' },
-  { path: 'underreview', loadChildren: './underreview/underreview.module#UnderreviewPageModule' },
-  { path: 'services/jha', loadChildren: './services/jha/jha.module#JhaPageModule' },
-  { path: 'services/jha-hospital', loadChildren: './services/jha-hospital/jha-hospital.module#JhaHospitalPageModule' }
-
-
-
-
-
-
-
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule) },
+  {
+    path: 'property-images',
+    loadChildren: () => import('./property-images/property-images.module').then(m => m.PropertyImagesPageModule) },
+  {
+    path: 'services/detail/:serviceid/gallery',
+    loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryPageModule) },
+  {
+    path: 'services',
+    loadChildren: () => import('./services/services.module').then(m => m.ServicesPageModule) },
+  {
+    path: 'ratings',
+    loadChildren: () => import('./ratings/ratings.module').then(m => m.RatingsPageModule) },
+  {
+    path: 'services/detail/:serviceid',
+    loadChildren: () => import('./services/detail/detail.module').then(m => m.DetailPageModule) },
+  {
+    path: 'underreview',
+    loadChildren: () => import('./underreview/underreview.module').then(m => m.UnderreviewPageModule) },
+  {
+    path: 'services/jha',
+    loadChildren: () => import('./services/jha/jha.module').then(m => m.JhaPageModule) },
+  {
+    path: 'services/jha-hospital',
+    loadChildren: () => import('./services/jha-hospital/jha-hospital.module').then(m => m.JhaHospitalPageModule) }
 ];
 @NgModule({
   imports: [
